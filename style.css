@@ -26,6 +26,20 @@ body {
 
 /* Elements */
 
+h1 {
+    margin: 16px auto;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin: 16px auto 8px;
+}
+
+h6 {
+    font-size: 1rem;
+    margin: 8px auto;
+}
+
 p {
     padding: 16px;
 }
