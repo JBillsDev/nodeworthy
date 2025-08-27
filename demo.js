@@ -27,6 +27,13 @@ window.onload = function() {
         nodeworthy.createP(
             `A paragraph of text...`, [`text-highlight`])
     );
+    div3.appendChild(
+        nodeworthy.createButton(`Click me!`, () => {
+            document.body.appendChild(
+                nodeworthy.createP(`The button was clicked!`)
+            )
+        })
+    );
 
     document.body.appendChild(div3);
 }
