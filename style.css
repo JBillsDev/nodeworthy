@@ -4,6 +4,7 @@
     --color-grey-dark: #222;
     --color-grey-light: #444;
     --color-white: #fafafa;
+    --color-yellow: #ff0;
 }
 
 * {
@@ -20,6 +21,13 @@ html, body {
 body {
     background-color: var(--color-grey);
     color: var(--color-white);
+    font-family: Consolas, Monospaced, sans-serif;
+}
+
+/* Elements */
+
+p {
+    padding: 16px;
 }
 
 /* Generic Classes */
@@ -38,4 +46,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 24px;
+}
+
+.text-center {
+    text-align: center;
+ }
+
+.text-highlight:hover {
+    color: var(--color-yellow);
 }

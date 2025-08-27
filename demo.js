@@ -12,5 +12,10 @@ window.onload = function() {
 
     const div3 = nodeworthy.createDiv(
         [1, `  `, 3, `flex-column`, 5, `flex row`, 7, `flex column`, 9, ``], 'div-id');
+    div3.appendChild(
+        nodeworthy.createP(
+            `A paragraph of text...`, [`text-highlight`])
+    );
+
     document.body.appendChild(div3);
 }
