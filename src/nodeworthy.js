@@ -24,4 +24,13 @@ export default class Nodeworthy {
             document.createElement('div'), classList, id
         );
     }
+
+    createP(text = ``, classList = [], id = ``) {
+        const p = this.#createElement(
+            document.createElement('p'), classList, id
+        )
+
+        p.innerText = text;
+        return p;
+    }
 }
