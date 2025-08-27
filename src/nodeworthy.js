@@ -25,6 +25,19 @@ export default class Nodeworthy {
         );
     }
 
+    createH(text = ``, level = 1, classList = [], id = ``) {
+        if (typeof level !== `number` || !Number.isInteger(level) || level < 1 || level > 6) {
+            level = 1;
+        }
+
+        const h = this.#createElement(
+            document.createElement(`h${level}`), classList, id
+        )
+
+        h.innerText = text;
+        return h;
+    }
+
     createP(text = ``, classList = [], id = ``) {
         const p = this.#createElement(
             document.createElement('p'), classList, id
