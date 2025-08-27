@@ -30,7 +30,7 @@ window.onload = function() {
     div3.appendChild(
         nodeworthy.createButton(`Click me!`, () => {
             document.body.appendChild(
-                nodeworthy.createP(`The button was clicked!`)
+                nodeworthy.createImg(`https://picsum.photos/200`, `A Picsum Image`)
             )
         })
     );

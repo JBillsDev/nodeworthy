@@ -48,6 +48,21 @@ export default class Nodeworthy {
         return h;
     }
 
+    createImg(src, alt = ``, classList = [], id = ``) {
+        const img = this.#createElement(
+            document.createElement('img'), classList, id
+        )
+
+        img.src = src;
+
+        if (typeof alt === `string` && alt !== ``)
+        {
+            img.alt = alt;
+        }
+
+        return img;
+    }
+
     createP(text = ``, classList = [], id = ``) {
         const p = this.#createElement(
             document.createElement('p'), classList, id
