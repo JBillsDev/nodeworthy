@@ -19,6 +19,16 @@ export default class Nodeworthy {
         return element;
     }
 
+    createButton(text = ``, callback = () => {}, classList = [], id = ``) {
+        const button = this.#createElement(
+            document.createElement('button'), classList, id
+        )
+
+        button.innerText = text;
+        button.onclick = callback;
+        return button;
+    }
+
     createDiv(classList = [], id = ``) {
         return this.#createElement(
             document.createElement('div'), classList, id

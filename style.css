@@ -1,5 +1,8 @@
 
 :root {
+    --color-blue: #55f;
+    --color-blue-dark: #33b;
+    --color-blue-light: #77f;
     --color-grey: #333;
     --color-grey-dark: #222;
     --color-grey-light: #444;
@@ -15,7 +18,7 @@
 
 html, body {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 body {
@@ -25,6 +28,25 @@ body {
 }
 
 /* Elements */
+
+button {
+    background: var(--color-blue);
+    border: none;
+    border-radius: 12px;
+    color: var(--color-white);
+    font-size: 1rem;
+    margin: 8px;
+    padding: 8px;
+}
+
+button:hover {
+    background: var(--color-blue-light);
+    color: var(--color-yellow);
+}
+
+button:active {
+    background: var(--color-blue-dark);
+}
 
 h1 {
     margin: 16px auto;
