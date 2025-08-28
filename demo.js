@@ -13,7 +13,7 @@ window.onload = function() {
 
     const div2 = nodeworthy.createDiv(['flex-row'], 2);
     div2.appendChild(
-        nodeworthy.createH(`White this is an H6`, 6)
+        nodeworthy.createH(`While this is an H6`, 6)
     );
 
     document.body.appendChild(div2);
