@@ -32,6 +32,27 @@ export default class Nodeworthy {
     }
 
     /**
+     * @description Creates and returns an anchor element.
+     * @param href - The URL to link to.
+     * @param text - The text to display on the link.
+     * @param classList - An array of class names to apply to the link.
+     * @param id - The ID to assign to the link.
+     * @returns {*} - The created anchor element.
+     */
+    createA(href = ``, text = ``, classList = [], id = ``) {
+        const a = document.createElement('a');
+        if (typeof href === `string` && href !== ``) {
+            a.href = href;
+        }
+
+        a.textContent = text;
+
+        return this.#createElement(
+            a, classList, id
+        );
+    }
+
+    /**
      * @description Creates and returns a button element.
      * @param text - The text to display on the button.
      * @param callback - The function to call when the button is clicked.
