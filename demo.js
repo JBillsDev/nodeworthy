@@ -29,9 +29,11 @@ window.onload = function() {
     );
     div3.appendChild(
         nodeworthy.createButton(`Click me!`, () => {
-            document.body.appendChild(
-                nodeworthy.createImg(`https://picsum.photos/200`, `A Picsum Image`)
-            )
+            const img = nodeworthy.createImg(`https://picsum.photos/200`, `A Picsum Image`);
+            const a = nodeworthy.createA(`https://picsum.photos/`);
+            a.appendChild(img);
+
+            document.body.appendChild(a);
         })
     );
 
