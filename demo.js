@@ -43,7 +43,7 @@ class App {
         );
     }
 
-    #createMain() {
+    async #createMain() {
         const main = this.nodeworthy.createMain(`flex-center flex-column`);
         main.appendChild(
             this.nodeworthy.createH(`Title`, 2)
@@ -77,6 +77,10 @@ class App {
         );
 
         document.body.appendChild(main);
+
+        this.#waitSeconds(0.5).then();
+        this.#createTableHead();
+        await this.#createTableBody();
     }
 
     #createNav() {
@@ -94,13 +98,84 @@ class App {
         return nav;
     }
 
+    async #createTableBody() {
+        const data = [
+            { name: `John`, age: 25, country: `USA`, email: `john@fakemail.com` },
+            { name: `Jake`, age: 30, country: `Canada`, email: `jake@fakemail.com` },
+            { name: `Jenny`, age: 42, country: `France`, email: `jenny@fakemail.com` },
+        ];
+
+        const tbody = this.nodeworthy.createTbody();
+        document.body.querySelector(`table`).appendChild(tbody);
+
+        for (let i = 0; i < data.length; i++) {
+            await this.#createRow(i, data[i]);
+        }
+    }
+
+    #createTableHead() {
+        const table = this.nodeworthy.createTable();
+        const thead = this.nodeworthy.createThead();
+        const headRowTop = this.nodeworthy.createTr();
+        headRowTop.appendChild(
+            this.nodeworthy.createTh(`#`, 0, 2)
+        );
+        headRowTop.appendChild(
+            this.nodeworthy.createTh(`Name`)
+        );
+        headRowTop.appendChild(
+            this.nodeworthy.createTh(`Age`)
+        );
+        headRowTop.appendChild(
+            this.nodeworthy.createTh(`Country`)
+        );
+
+        const headRowBottom = this.nodeworthy.createTr();
+        headRowBottom.appendChild(
+            this.nodeworthy.createTh(`Email`, 3)
+        );
+
+        thead.appendChild(headRowTop);
+        thead.appendChild(headRowBottom);
+        table.appendChild(thead);
+
+        document.querySelector(`main`).appendChild(table);
+    }
+
+    async #createRow(index, row) {
+        await this.#waitSeconds(0.25).then();
+
+        const trTop = this.nodeworthy.createTr();
+        trTop.appendChild(
+            this.nodeworthy.createTd(index.toString(), 0, 2, `text-center`)
+        );
+        trTop.appendChild(
+            this.nodeworthy.createTd(row[`name`])
+        );
+        trTop.appendChild(
+            this.nodeworthy.createTd(row[`age`])
+        );
+        trTop.appendChild(
+            this.nodeworthy.createTd(row[`country`])
+        );
+
+        const trBottom = this.nodeworthy.createTr();
+        trBottom.appendChild(
+            this.nodeworthy.createTd(row[`email`], 3, 0, `text-center`)
+        );
+
+        const tbody = document.querySelector(`tbody`);
+        tbody.appendChild(trTop);
+        tbody.appendChild(trBottom);
+    }
+
     async login() {
         document.body.removeChild(document.getElementById(`login`));
 
         await this.#waitSeconds(1);
         await this.#createHeader();
         await this.#waitSeconds(0.5);
-        this.#createMain();
+        await this.#createMain();
         await this.#waitSeconds(0.5);
         this.#createFooter();
     }

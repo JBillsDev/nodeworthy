@@ -190,4 +190,60 @@ export default class Nodeworthy {
         p.innerText = text;
         return p;
     }
+
+    createTable(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('table'), classList, id
+        );
+    }
+
+    createTbody(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('tbody'), classList, id
+        );
+    }
+
+    createTd(innerHtml = ``, colspan = 0, rowspan = 0, classList = ``, id = ``) {
+        const td = document.createElement('td');
+
+        if (typeof colspan === `number` && Number.isInteger(colspan) && colspan > 0) {
+            td.colSpan = colspan;
+        }
+
+        if (typeof rowspan === `number` && Number.isInteger(rowspan) && rowspan > 0) {
+            td.rowSpan = rowspan;
+        }
+
+        td.innerHTML = innerHtml;
+
+        return this.#createElement(td, classList, id);
+    }
+
+    createTh(innerHtml = ``, colspan = 0, rowspan = 0, classList = ``, id = ``) {
+        const th = document.createElement('th');
+
+        if (typeof colspan === `number` && Number.isInteger(colspan) && colspan > 0) {
+            th.colSpan = colspan;
+        }
+
+        if (typeof rowspan === `number` && Number.isInteger(rowspan) && rowspan > 0) {
+            th.rowSpan = rowspan;
+        }
+
+        th.innerHTML = innerHtml;
+
+        return this.#createElement(th, classList, id);
+    }
+
+    createThead(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('thead'), classList, id
+        );
+    }
+
+    createTr(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('tr'), classList, id
+        );
+    }
 }

@@ -108,6 +108,29 @@ p {
     padding: 16px;
 }
 
+table {
+    border-collapse: collapse;
+    margin-top: 16px;
+    width: 100%;
+
+    tbody {
+        background: var(--color-grey);
+    }
+
+    td, th {
+        border: 1px solid var(--color-white);
+        padding: 8px;
+    }
+
+    thead {
+        background: var(--color-black);
+
+        th {
+            text-align: center;
+        }
+    }
+}
+
 /* Generic Classes */
 
 .background-dark {
