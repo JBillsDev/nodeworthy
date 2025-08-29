@@ -140,6 +140,18 @@ export default class Nodeworthy {
     }
 
     /**
+     * @description Creates and returns a nav element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the nav.
+     * @returns {*} - The created nav element.
+     */
+    createNav(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('nav'), classList, id
+        );
+    }
+
+    /**
      * @description Creates and returns a paragraph element.
      * @param text - The text to display in the paragraph.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').

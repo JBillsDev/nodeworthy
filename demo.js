@@ -27,6 +27,26 @@ class App {
         );
 
         header.appendChild(div2);
+
+        await this.#waitSeconds(0.5);
+        header.appendChild(
+            this.#createNav()
+        );
+    }
+
+    #createNav() {
+        const nav = this.nodeworthy.createNav(`flex-row`);
+        nav.appendChild(
+            this.nodeworthy.createA(`https://google.com`, `Google`)
+        );
+        nav.appendChild(
+            this.nodeworthy.createA(`https://duckduckgo.com`, `DuckDuckGo`)
+        );
+        nav.appendChild(
+            this.nodeworthy.createA(`https://github.com`, `GitHub`)
+        );
+
+        return nav;
     }
 
     async login() {
