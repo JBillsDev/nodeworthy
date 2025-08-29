@@ -194,8 +194,9 @@ table {
 }
 
 #table-container {
+    border: 2px inset var(--color-white);
     height: 300px;
-    overflow-x: auto;
+    overflow-y: scroll;
     margin-top: 16px;
     width: 100%;
 
