@@ -84,6 +84,18 @@ export default class Nodeworthy {
     }
 
     /**
+     * @description Creates and returns a footer element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the footer.
+     * @returns {*} - The created footer element.
+     */
+    createFooter(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('footer'), classList, id
+        );
+    }
+
+    /**
      * @description Creates and returns an 'h' element of the specified level (h1 - h6).
      * @param text - The text to display in the 'h' element.
      * @param level - The level of the 'h' element (1-6).
