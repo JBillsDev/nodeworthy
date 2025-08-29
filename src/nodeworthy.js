@@ -191,6 +191,15 @@ export default class Nodeworthy {
         return p;
     }
 
+    createSpan(innerHtml = ``, classList = ``, id = ``) {
+        const span = this.#createElement(
+            document.createElement('span'), classList, id
+        )
+
+        span.innerHTML = innerHtml;
+        return span;
+    }
+
     /**
      * @description Creates and returns a table element.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
