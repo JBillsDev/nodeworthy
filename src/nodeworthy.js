@@ -140,6 +140,18 @@ export default class Nodeworthy {
     }
 
     /**
+     * @description Creates and returns a main element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the main element.
+     * @returns {*} - The created main element.
+     */
+    createMain(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('main'), classList, id
+        );
+    }
+
+    /**
      * @description Creates and returns a nav element.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the nav.
