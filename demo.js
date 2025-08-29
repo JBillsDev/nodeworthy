@@ -100,9 +100,18 @@ class App {
 
     async #createTableBody() {
         const data = [
-            { name: `John`, age: 25, country: `USA`, email: `john@fakemail.com` },
-            { name: `Jake`, age: 30, country: `Canada`, email: `jake@fakemail.com` },
-            { name: `Jenny`, age: 42, country: `France`, email: `jenny@fakemail.com` },
+            { name: `John Johnnies`, age: 25, country: `US`, email: `john@fakemail.com` },
+            { name: `Jake Jacobson`, age: 30, country: `CA`, email: `jake@fakemail.com` },
+            { name: `Jenny Jennette`, age: 42, country: `FR`, email: `jenny@fakemail.com` },
+            { name: `John Johnnies`, age: 25, country: `US`, email: `john@fakemail.com` },
+            { name: `Jake Jacobson`, age: 30, country: `CA`, email: `jake@fakemail.com` },
+            { name: `Jenny Jennette`, age: 42, country: `FR`, email: `jenny@fakemail.com` },
+            { name: `John Johnnies`, age: 25, country: `US`, email: `john@fakemail.com` },
+            { name: `Jake Jacobson`, age: 30, country: `CA`, email: `jake@fakemail.com` },
+            { name: `Jenny Jennette`, age: 42, country: `FR`, email: `jenny@fakemail.com` },
+            { name: `John Johnnies`, age: 25, country: `US`, email: `john@fakemail.com` },
+            { name: `Jake Jacobson`, age: 30, country: `CA`, email: `jake@fakemail.com` },
+            { name: `Jenny Jennette`, age: 42, country: `FR`, email: `jenny@fakemail.com` },
         ];
 
         const tbody = this.nodeworthy.createTbody();
@@ -114,20 +123,21 @@ class App {
     }
 
     #createTableHead() {
+        const container = this.nodeworthy.createDiv(``, `table-container`);
         const table = this.nodeworthy.createTable();
         const thead = this.nodeworthy.createThead();
         const headRowTop = this.nodeworthy.createTr();
         headRowTop.appendChild(
-            this.nodeworthy.createTh(`#`, 0, 2)
+            this.nodeworthy.createTh(`#`, 0, 2, `table-index text-center`)
         );
         headRowTop.appendChild(
-            this.nodeworthy.createTh(`Name`)
+            this.nodeworthy.createTh(`Name`, `text-center`)
         );
         headRowTop.appendChild(
-            this.nodeworthy.createTh(`Age`)
+            this.nodeworthy.createTh(`Age`, 0, 0, `table-age text-center`)
         );
         headRowTop.appendChild(
-            this.nodeworthy.createTh(`Country`)
+            this.nodeworthy.createTh(`CC`, 0, 0, `table-cc text-center`)
         );
 
         const headRowBottom = this.nodeworthy.createTr();
@@ -138,8 +148,9 @@ class App {
         thead.appendChild(headRowTop);
         thead.appendChild(headRowBottom);
         table.appendChild(thead);
+        container.appendChild(table);
 
-        document.querySelector(`main`).appendChild(table);
+        document.querySelector(`main`).appendChild(container);
     }
 
     async #createRow(index, row) {
@@ -147,16 +158,16 @@ class App {
 
         const trTop = this.nodeworthy.createTr();
         trTop.appendChild(
-            this.nodeworthy.createTd(index.toString(), 0, 2, `text-center`)
+            this.nodeworthy.createTd(index.toString(), 0, 2, `table-index text-center`)
         );
         trTop.appendChild(
-            this.nodeworthy.createTd(row[`name`])
+            this.nodeworthy.createTd(row[`name`], 0, 0, `text-center`)
         );
         trTop.appendChild(
-            this.nodeworthy.createTd(row[`age`])
+            this.nodeworthy.createTd(row[`age`], 0, 0, `table-age text-center`)
         );
         trTop.appendChild(
-            this.nodeworthy.createTd(row[`country`])
+            this.nodeworthy.createTd(row[`country`], 0, 0, `table-cc text-center`)
         );
 
         const trBottom = this.nodeworthy.createTr();
