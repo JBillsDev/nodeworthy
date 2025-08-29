@@ -29,6 +29,15 @@ body {
 
 /* Elements */
 
+a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-yellow);
+}
+
 button {
     background: var(--color-blue);
     border: none;
@@ -61,6 +70,16 @@ h2 {
 h6 {
     font-size: 1rem;
     margin: 8px auto;
+}
+
+nav {
+    background: var(--color-grey-dark);
+    border-bottom: 1px solid var(--color-white);
+    justify-content: center;
+
+    a {
+        padding: 8px;
+    }
 }
 
 p {
