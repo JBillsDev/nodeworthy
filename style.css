@@ -110,7 +110,6 @@ p {
 
 table {
     border-collapse: collapse;
-    margin-top: 16px;
     width: 100%;
 
     tbody {
@@ -191,5 +190,24 @@ table {
 
     #button-login {
         width: 120px;
+    }
+}
+
+#table-container {
+    height: 300px;
+    overflow-x: auto;
+    margin-top: 16px;
+    width: 100%;
+
+    .table-age {
+        width: 72px;
+    }
+
+    .table-index {
+        width: 72px;
+    }
+
+    .table-cc {
+        width: 24px;
     }
 }
