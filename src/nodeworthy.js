@@ -105,6 +105,18 @@ export default class Nodeworthy {
     }
 
     /**
+     * @description Creates and returns a header element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the header.
+     * @returns {*} - The created header element.
+     */
+    createHeader(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('header'), classList, id
+        );
+    }
+
+    /**
      * @description Creates and returns an img element.
      * @param src - The source of the image.
      * @param alt - The alt text for the image.

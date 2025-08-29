@@ -11,24 +11,30 @@ class App {
         return new Promise(resolve => setTimeout(resolve, seconds * 1000));
     }
 
-    async login() {
-        document.body.removeChild(document.getElementById(`login`));
-
-        await this.#waitSeconds(1);
-
+    async #createHeader() {
+        const header = this.nodeworthy.createHeader();
         const div1 = this.nodeworthy.createDiv('background-dark border-bottom flex-row', `div-h1`);
         div1.appendChild(
             this.nodeworthy.createH(`This is an H1...`)
         );
-        document.body.appendChild(div1);
+        header.appendChild(div1);
+        document.body.appendChild(header);
 
         await this.#waitSeconds(0.5);
-        const div2 = this.nodeworthy.createDiv('background-dark border-bottom flex-row', 2);
+        const div2 = this.nodeworthy.createDiv('background-dark border-bottom flex-row');
         div2.appendChild(
             this.nodeworthy.createH(`While this is an H6`, 6)
         );
 
-        document.body.appendChild(div2);
+        header.appendChild(div2);
+    }
+
+    async login() {
+        document.body.removeChild(document.getElementById(`login`));
+
+        await this.#waitSeconds(1);
+        await this.#createHeader();
+        await this.#waitSeconds(0.5);
 
         const div3 = this.nodeworthy.createDiv(`flex-center flex-column`);
         div3.appendChild(
@@ -40,8 +46,6 @@ class App {
         );
 
         document.body.appendChild(div3);
-
-        await this.#waitSeconds(0.5);
 
         const buttonClass = `button-img`;
         div3.appendChild(
