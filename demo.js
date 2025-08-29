@@ -11,6 +11,15 @@ class App {
         return new Promise(resolve => setTimeout(resolve, seconds * 1000));
     }
 
+    #createFooter() {
+        const footer = this.nodeworthy.createFooter(`flex-center`);
+        footer.append(
+            this.nodeworthy.createP(`©2025 - Some Company`)
+        );
+
+        document.body.appendChild(footer);
+    }
+
     async #createHeader() {
         const header = this.nodeworthy.createHeader();
         const div1 = this.nodeworthy.createDiv('background-dark border-bottom flex-row', `div-h1`);
@@ -92,6 +101,8 @@ class App {
         await this.#createHeader();
         await this.#waitSeconds(0.5);
         this.#createMain();
+        await this.#waitSeconds(0.5);
+        this.#createFooter();
     }
 }
 

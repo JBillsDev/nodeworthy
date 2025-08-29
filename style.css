@@ -59,6 +59,20 @@ button:active {
     background: var(--color-blue-dark);
 }
 
+footer {
+    align-items: center;
+    background: var(--color-grey-dark);
+    border-top: 1px solid var(--color-white);
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    padding: 8px;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 h1 {
     margin: 16px auto;
 }
