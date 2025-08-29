@@ -1,5 +1,6 @@
 
 :root {
+    --color-black: #0f0f0f;
     --color-blue: #55f;
     --color-blue-dark: #33b;
     --color-blue-light: #77f;
@@ -64,12 +65,19 @@ h1 {
 
 h2 {
     font-size: 1.6rem;
-    margin: 16px auto 8px;
 }
 
 h6 {
     font-size: 1rem;
     margin: 8px auto;
+}
+
+main {
+    background: var(--color-grey-dark);
+    border-radius: 16px;
+    margin: 16px auto;
+    padding: 16px;
+    width: 500px;
 }
 
 nav {
@@ -128,8 +136,7 @@ p {
 }
 
 #div-img {
-    background: var(--color-grey-light);
-    border: 1px solid var(--color-white);
+    background: var(--color-black);
     border-radius: 12px;
     height: 230px;
     margin: 15px auto;

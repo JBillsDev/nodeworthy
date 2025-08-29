@@ -34,6 +34,42 @@ class App {
         );
     }
 
+    #createMain() {
+        const main = this.nodeworthy.createMain(`flex-center flex-column`);
+        main.appendChild(
+            this.nodeworthy.createH(`Title`, 2)
+        );
+        main.appendChild(
+            this.nodeworthy.createP(
+                `A paragraph of text...`, `text-highlight`)
+        );
+
+        this.#waitSeconds(0.5).then();
+
+        const buttonClass = `button-img`;
+        main.appendChild(
+            this.nodeworthy.createButton(
+                `Click me!`,
+                () => {
+                    const main = document.querySelector(`main`);
+                    main.removeChild(document.getElementById(buttonClass));
+
+                    const div = this.nodeworthy.createDiv(`flex-center flex-row`, `div-img`);
+                    const img = this.nodeworthy.createImg(`https://picsum.photos/200`, `A Picsum Image`);
+                    const a = this.nodeworthy.createA(`https://picsum.photos/`);
+
+                    a.appendChild(img);
+                    div.appendChild(a);
+                    main.appendChild(div);
+                },
+                ``,
+                buttonClass
+            )
+        );
+
+        document.body.appendChild(main);
+    }
+
     #createNav() {
         const nav = this.nodeworthy.createNav(`flex-row`);
         nav.appendChild(
@@ -55,37 +91,7 @@ class App {
         await this.#waitSeconds(1);
         await this.#createHeader();
         await this.#waitSeconds(0.5);
-
-        const div3 = this.nodeworthy.createDiv(`flex-center flex-column`);
-        div3.appendChild(
-            this.nodeworthy.createH(`Title`, 2)
-        );
-        div3.appendChild(
-            this.nodeworthy.createP(
-                `A paragraph of text...`, `text-highlight`)
-        );
-
-        document.body.appendChild(div3);
-
-        const buttonClass = `button-img`;
-        div3.appendChild(
-            this.nodeworthy.createButton(
-                `Click me!`,
-                () => {
-                    document.getElementById(buttonClass).parentElement.removeChild(document.getElementById(buttonClass));
-
-                    const div = this.nodeworthy.createDiv(`flex-center flex-row`, `div-img`);
-                    const img = this.nodeworthy.createImg(`https://picsum.photos/200`, `A Picsum Image`);
-                    const a = this.nodeworthy.createA(`https://picsum.photos/`);
-
-                    a.appendChild(img);
-                    div.appendChild(a);
-                    document.body.appendChild(div);
-                },
-                ``,
-                buttonClass
-            )
-        );
+        this.#createMain();
     }
 }
 
