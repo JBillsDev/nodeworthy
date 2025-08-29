@@ -115,6 +115,10 @@ p {
     height: 230px;
     margin: 15px auto;
     width: 230px;
+
+    img {
+        border-radius: 12px;
+    }
 }
 
 #login {
@@ -123,6 +127,6 @@ p {
     justify-content: center;
 
     #button-login {
-        width: 60%;
+        width: 120px;
     }
 }
