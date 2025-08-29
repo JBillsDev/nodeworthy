@@ -191,18 +191,39 @@ export default class Nodeworthy {
         return p;
     }
 
+    /**
+     * @description Creates and returns a table element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the table.
+     * @returns {*} - The created table element.
+     */
     createTable(classList = ``, id = ``) {
         return this.#createElement(
             document.createElement('table'), classList, id
         );
     }
 
+    /**
+     * @description Creates and returns a tbody element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the tbody.
+     * @returns {*} - The created tbody element.
+     */
     createTbody(classList = ``, id = ``) {
         return this.#createElement(
             document.createElement('tbody'), classList, id
         );
     }
 
+    /**
+     * @description Creates and returns a td element.
+     * @param innerHtml - The inner HTML content of the td element.
+     * @param colspan - The number of columns to span.
+     * @param rowspan - The number of rows to span.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the td element.
+     * @returns {*} - The created td element.
+     */
     createTd(innerHtml = ``, colspan = 0, rowspan = 0, classList = ``, id = ``) {
         const td = document.createElement('td');
 
@@ -219,6 +240,15 @@ export default class Nodeworthy {
         return this.#createElement(td, classList, id);
     }
 
+    /**
+     * @description Creates and returns a th element.
+     * @param innerHtml - The inner HTML content of the th element.
+     * @param colspan - The number of columns to span.
+     * @param rowspan - The number of rows to span.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the th element.
+     * @returns {*} - The created th element.
+     */
     createTh(innerHtml = ``, colspan = 0, rowspan = 0, classList = ``, id = ``) {
         const th = document.createElement('th');
 
@@ -235,12 +265,24 @@ export default class Nodeworthy {
         return this.#createElement(th, classList, id);
     }
 
+    /**
+     * @description Creates and returns a thead element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the thead.
+     * @returns {*} - The created thead element.
+     */
     createThead(classList = ``, id = ``) {
         return this.#createElement(
             document.createElement('thead'), classList, id
         );
     }
 
+    /**
+     * @description Creates and returns a 'tr' element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the 'tr' element.
+     * @returns {*} - The created 'tr' element.
+     */
     createTr(classList = ``, id = ``) {
         return this.#createElement(
             document.createElement('tr'), classList, id
