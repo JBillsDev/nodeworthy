@@ -48,10 +48,13 @@ class App {
         main.appendChild(
             this.nodeworthy.createH(`Title`, 2)
         );
-        main.appendChild(
-            this.nodeworthy.createP(
-                `A paragraph of text...`, `text-highlight`)
-        );
+
+        const p = this.nodeworthy.createP();
+        p.innerHTML = `This is a paragraph with a`;
+        const span = this.nodeworthy.createSpan(` span that highlights text!`, `text-highlight`);
+        p.appendChild(span);
+        main.appendChild(p);
+
 
         this.#waitSeconds(0.5).then();
 
