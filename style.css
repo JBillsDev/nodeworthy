@@ -76,6 +76,33 @@ footer {
     width: 100%;
 }
 
+form {
+    border: 2px inset var(--color-white);
+    gap: 2px;
+    padding: 16px 16px 6px;
+    width: 100%;
+
+    button {
+        outline: none;
+    }
+
+    .flex-row {
+        align-items: center;
+        gap: 8px;
+        justify-content: space-between;
+
+        input {
+            flex-grow: 1;
+            outline: none;
+            padding: 4px;
+        }
+
+        label {
+            width: 20%;
+        }
+    }
+}
+
 h1 {
     margin: 16px auto;
 }
@@ -170,6 +197,10 @@ table {
 .text-center {
     text-align: center;
  }
+
+.text-right {
+    text-align: right;
+}
 
 .text-highlight:hover {
     color: var(--color-yellow);
