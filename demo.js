@@ -36,11 +36,33 @@ class App {
         );
 
         header.appendChild(div2);
+    }
 
-        await this.#waitSeconds(0.5);
-        header.appendChild(
-            this.#createNav()
+    #createLists() {
+        const div = this.nodeworthy.createDiv(`flex-column`, `div-lists`);
+        div.appendChild(
+            this.nodeworthy.createH(`Lists`, 2, `border-bottom text-center`)
         );
+
+        const flexRow = this.nodeworthy.createDiv(`flex-row`);
+        const ol = this.nodeworthy.createOl();
+        for (let i = 0; i < 5; i++) {
+            ol.appendChild(
+                this.nodeworthy.createLi(`Ordered list item`)
+            );
+        }
+
+        const ul = this.nodeworthy.createUl();
+        for (let i = 0; i < 5; i++) {
+            ul.appendChild(
+                this.nodeworthy.createLi(`Unordered list item`)
+            );
+        }
+
+        flexRow.appendChild(ol);
+        flexRow.appendChild(ul);
+        div.appendChild(flexRow);
+        document.querySelector(`main`).appendChild(div);
     }
 
     async #createMain() {
@@ -55,6 +77,7 @@ class App {
         p.appendChild(span);
         main.appendChild(p);
 
+        document.body.appendChild(main);
 
         this.#waitSeconds(0.5).then();
 
@@ -79,8 +102,8 @@ class App {
             )
         );
 
-        document.body.appendChild(main);
-
+        this.#waitSeconds(0.5).then();
+        this.#createLists();
         this.#waitSeconds(0.5).then();
         this.#createTableHead();
         await this.#createTableBody();
@@ -98,7 +121,7 @@ class App {
             this.nodeworthy.createA(`https://github.com`, `GitHub`)
         );
 
-        return nav;
+        document.body.appendChild(nav);
     }
 
     async #createTableBody() {
@@ -187,11 +210,12 @@ class App {
         document.body.removeChild(document.getElementById(`login`));
 
         await this.#waitSeconds(1);
+        this.#createFooter();
         await this.#createHeader();
         await this.#waitSeconds(0.5);
-        await this.#createMain();
+        this.#createNav();
         await this.#waitSeconds(0.5);
-        this.#createFooter();
+        await this.#createMain();
     }
 }
 

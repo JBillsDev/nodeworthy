@@ -152,6 +152,20 @@ export default class Nodeworthy {
     }
 
     /**
+     * description Creates and returns an 'li' element.
+     * @param innerHtml - The inner HTML content of the 'li' element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the 'li' element.
+     * @returns {*} - The created main element.
+     */
+    createLi(innerHtml = ``, classList = ``, id = ``) {
+        const li = document.createElement('li');
+        li.innerHTML = innerHtml;
+
+        return this.#createElement(li, classList, id);
+    }
+
+    /**
      * @description Creates and returns a main element.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the main element.
@@ -172,6 +186,18 @@ export default class Nodeworthy {
     createNav(classList = ``, id = ``) {
         return this.#createElement(
             document.createElement('nav'), classList, id
+        );
+    }
+
+    /**
+     * @description Creates and returns an 'ol' element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the 'ol' element.
+     * @returns {*} - The created 'ol' element.
+     */
+    createOl(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('ol'), classList, id
         );
     }
 
@@ -295,6 +321,18 @@ export default class Nodeworthy {
     createTr(classList = ``, id = ``) {
         return this.#createElement(
             document.createElement('tr'), classList, id
+        );
+    }
+
+    /**
+     * @description Creates and returns a 'ul' element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the 'tr' element.
+     * @returns {*} - The created 'ul' element.
+     */
+    createUl(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('ul'), classList, id
         );
     }
 }
