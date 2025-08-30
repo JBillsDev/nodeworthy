@@ -20,6 +20,122 @@ class App {
         document.body.appendChild(footer);
     }
 
+    #createForm() {
+        const form = this.nodeworthy.createForm(
+            `dummy-form`, ``, ``,
+            `flex-column`, `dummy-form`, `_self`,
+            `off`
+        );
+
+        const name = this.nodeworthy.createDiv(`flex-row`);
+        name.appendChild(
+            this.nodeworthy.createLabel(`Name:`, `input-name`, `text-right`)
+        );
+        name.appendChild(
+            this.nodeworthy.createInputText(
+                ``, `input-name`, `John Doe`, ``, `input-name`,
+                0, 0, ``, 0, ``,
+                ``, false, true
+            )
+        );
+        form.appendChild(name);
+
+        const age = this.nodeworthy.createDiv(`flex-row`);
+        age.appendChild(
+            this.nodeworthy.createLabel(`Age:`, `input-age`, `text-right`)
+        );
+        age.appendChild(
+            this.nodeworthy.createInputNumber(
+                0, 1, `input-age`, 21, ``,  `input-age`,
+                0, 0, ``, 0, `/^[0-9]+$/`,
+                ``, false, true
+            )
+        );
+        form.appendChild(age);
+
+        const countryCode = this.nodeworthy.createDiv(`flex-row`);
+        countryCode.appendChild(
+            this.nodeworthy.createLabel(`CC:`, `input-cc`, `text-right`)
+        );
+        countryCode.appendChild(
+            this.nodeworthy.createInputText(
+                ``, `input-cc`, `US`, ``, `input-cc`,
+                2, 2, ``, 0, `/^[A-Za-z]+$/`,
+                ``, false, true
+            )
+        );
+        form.appendChild(countryCode);
+
+        const email = this.nodeworthy.createDiv(`flex-row`);
+        email.appendChild(
+            this.nodeworthy.createLabel(`Email:`, `input-email`, `text-right`)
+        );
+        email.appendChild(
+            this.nodeworthy.createInputEmail(
+                ``, `input-email`, `john@fakemail.com`, ``, `input-email`,
+                0, 0, false, ``, 0, ``,
+                ``, false, true
+            )
+        );
+        form.appendChild(email);
+
+        const button = this.nodeworthy.createButton(
+            `Submit`,
+            (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById(`input-name`);
+                const age = document.getElementById(`input-age`);
+                let ageValue = 0;
+                const countryCode = document.getElementById(`input-cc`);
+                const email = document.getElementById(`input-email`);
+
+                if (typeof name.value !== `string` || name.value === `` ) {
+                    alert(`Please enter a valid name...`);
+                    return;
+                }
+
+                if (typeof age.value === `string`) {
+                    ageValue = parseInt(age.value);
+
+                    if (ageValue < 1) {
+                        alert(`Please enter a valid age...`);
+                        return;
+                    }
+                } else {
+                    alert(`Please enter a valid age...`);
+                    return;
+                }
+
+                if (typeof countryCode.value !== `string` || countryCode.value.length !== 2) {
+                    alert(`Please enter a valid country code...`);
+                    return;
+                }
+
+                if (typeof email.value !== `string` || email.value.length < 5 ||
+                    !email.value.includes(`@`) || !email.value.includes(`.`)) {
+                    alert(`Please enter a valid email address...`);
+                    return;
+                }
+
+                this.#createRow(
+                    document.querySelectorAll(`tbody tr`).length / 2 + 1,
+                    {
+                        name: name.value, age: age.value, country: countryCode.value.toUpperCase(), email: email.value
+                    }
+                ).then();
+
+                name.value = ``;
+                age.value = ``;
+                countryCode.value = ``;
+                email.value = ``;
+            }
+        );
+        form.appendChild(button);
+
+        document.querySelector(`main`).appendChild(form);
+    }
+
     async #createHeader() {
         const header = this.nodeworthy.createHeader();
         const div1 = this.nodeworthy.createDiv('background-dark border-bottom flex-row', `div-h1`);
@@ -78,6 +194,8 @@ class App {
         main.appendChild(p);
 
         document.body.appendChild(main);
+
+        this.#createForm();
 
         this.#waitSeconds(0.5).then();
 
@@ -144,7 +262,7 @@ class App {
         document.body.querySelector(`table`).appendChild(tbody);
 
         for (let i = 0; i < data.length; i++) {
-            await this.#createRow(i, data[i]);
+            await this.#createRow(i + 1, data[i]);
         }
     }
 

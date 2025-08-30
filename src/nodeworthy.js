@@ -96,6 +96,64 @@ export default class Nodeworthy {
     }
 
     /**
+     * description Creates and returns a form element.
+     * @param name - The name of the form.
+     * @param action - The action URL of the form.
+     * @param method - The HTTP method of the form.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the form.
+     * @param target - The target attribute of the form.
+     * @param autocomplete - The autocomplete attribute of the form.
+     * @param acceptCharset - The acceptCharset attribute of the form.
+     * @param novalidate - Whether to disable form validation.
+     * @param enctype - The enctype attribute of the form.
+     * @returns {*} - The created form element.
+     */
+    createForm(name = ``, action = ``, method = ``,
+               classList = ``, id = ``, target = `_self`,
+               autocomplete = `off`, acceptCharset = `UTF-8`, novalidate = false,
+               enctype = `application/x-www-form-urlencoded`) {
+        const form = document.createElement('form');
+
+        if (typeof name === `string` && name !== ``) {
+            form.name = name;
+        }
+
+        if (typeof action === `string` && action !== ``) {
+            form.action = action;
+        }
+
+        if (typeof method === `string` && method !== ``) {
+            form.method = method;
+        }
+
+        if (typeof target === `string` && target !== ``) {
+            form.target = target;
+        }
+
+        if (typeof autocomplete === `string` &&
+            (autocomplete === `on` || autocomplete === `off`)) {
+            form.autocomplete = autocomplete;
+        }
+
+        if (typeof acceptCharset === `string` && acceptCharset !== ``) {
+            form.acceptCharset = acceptCharset;
+        }
+
+        if (typeof novalidate === `boolean`) {
+            form.noValidate = novalidate;
+        }
+
+        if (typeof enctype === `string` && enctype !== ``) {
+            form.enctype = enctype;
+        }
+
+        return this.#createElement(
+            form, classList, id
+        );
+    }
+
+    /**
      * @description Creates and returns an 'h' element of the specified level (h1 - h6).
      * @param text - The text to display in the 'h' element.
      * @param level - The level of the 'h' element (1-6).
@@ -149,6 +207,280 @@ export default class Nodeworthy {
         }
 
         return img;
+    }
+
+    /**
+     * @description Creates and returns an input element of type 'email'.
+     * @param value - The value of the email.
+     * @param name - The name of the email.
+     * @param placeholder - The placeholder text for the email.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the img element.
+     * @param minlength - The minimum length of the input.
+     * @param maxlength - The maximum length of the input.
+     * @param multiple - Whether the input allows multiple email values.
+     * @param autocomplete - The autocomplete attribute of the input.
+     * @param size - The size (width in characters) of the input.
+     * @param pattern - The regex pattern to match against the input.
+     * @param list - The list ID to associate with the input.
+     * @param readonly - Whether the input is read-only.
+     * @param required - Whether the input is required.
+     * @param disabled - Whether the input is disabled.
+     * @returns {*} - The created input element.
+     */
+    createInputEmail(value = ``, name = ``, placeholder = ``,
+                    classList = ``, id = ``,
+                    minlength = 0, maxlength = 0, multiple = false,
+                    autocomplete = ``, size = 0, pattern = ``, list = ``,
+                    readonly = false, required = false, disabled = false) {
+        const input = this.#createElement(
+            document.createElement('input'), classList, id
+        )
+
+        input.type = `email`;
+
+        if (typeof value === `string` && value !== ``) {
+            input.value = value;
+        }
+
+        if (typeof name === `string` && name !== ``) {
+            input.name = name;
+        }
+
+        if (typeof placeholder === `string` && placeholder !== ``) {
+            input.placeholder = placeholder;
+        }
+
+        if (typeof minlength === `number` && Number.isInteger(minlength) && minlength >= 0) {
+            input.minLength = minlength;
+        }
+
+        if (typeof maxlength === `number` && Number.isInteger(maxlength) && maxlength > 0) {
+            input.maxLength = maxlength;
+        }
+
+        if (typeof multiple === `boolean`) {
+            input.multiple = multiple;
+        }
+
+        if (typeof autocomplete === `string` && autocomplete !== ``) {
+            input.autocomplete = autocomplete;
+        }
+
+        if (typeof size === `number` && Number.isInteger(size) && size > 0) {
+            input.size = size;
+        }
+
+        if (typeof pattern === `string` && pattern !== ``) {
+            input.pattern = pattern;
+        }
+
+        if (typeof list === `string` && list !== ``) {
+            input.list = list;
+        }
+
+        if (typeof readonly === `boolean`) {
+            input.readOnly = readonly;
+        }
+
+        if (typeof required === `boolean`) {
+            input.required = required;
+        }
+
+        if (typeof disabled === `boolean`) {
+            input.disabled = disabled;
+        }
+
+        return input;
+    }
+
+    /**
+     * @description Creates and returns an input element of type 'number'.
+     * @param value - The value of the number.
+     * @param step - The step value of the number.
+     * @param name - The name of the number.
+     * @param placeholder - The placeholder text for the number.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the img element.
+     * @param min - The minimum length of the input.
+     * @param max - The maximum length of the input.
+     * @param autocomplete - The autocomplete attribute of the input.
+     * @param size - The size (width in characters) of the input.
+     * @param pattern - The regex pattern to match against the input.
+     * @param list - The list ID to associate with the input.
+     * @param readonly - Whether the input is read-only.
+     * @param required - Whether the input is required.
+     * @param disabled - Whether the input is disabled.
+     * @returns {*} - The created input element.
+     */
+    createInputNumber(value = 0, step = 1, name = ``, placeholder = 0,
+                    classList = ``, id = ``,
+                    min = 0, max = 0,
+                    autocomplete = ``, size = 0, pattern = ``, list = ``,
+                    readonly = false, required = false, disabled = false) {
+        const input = this.#createElement(
+            document.createElement('input'), classList, id
+        )
+
+        input.type = `number`;
+
+        if (typeof value === `number` && value !== 0) {
+            input.value = value;
+        }
+
+        if (typeof step === `number` && Number.isInteger(step)) {
+            input.step = step;
+        }
+
+        if (typeof name === `string` && name !== ``) {
+            input.name = name;
+        }
+
+        if (typeof placeholder === `number` && placeholder !== 0) {
+            input.placeholder = placeholder;
+        }
+
+        if (typeof min === `number`) {
+            input.minLength = min;
+        }
+
+        if (typeof max === `number`) {
+            input.maxLength = max;
+        }
+
+        if (typeof autocomplete === `string` && autocomplete !== ``) {
+            input.autocomplete = autocomplete;
+        }
+
+        if (typeof size === `number` && Number.isInteger(size) && size > 0) {
+            input.size = size;
+        }
+
+        if (typeof pattern === `string` && pattern !== ``) {
+            input.pattern = pattern;
+        }
+
+        if (typeof list === `string` && list !== ``) {
+            input.list = list;
+        }
+
+        if (typeof readonly === `boolean`) {
+            input.readOnly = readonly;
+        }
+
+        if (typeof required === `boolean`) {
+            input.required = required;
+        }
+
+        if (typeof disabled === `boolean`) {
+            input.disabled = disabled;
+        }
+
+        return input;
+    }
+
+    /**
+     * @description Creates and returns an input element of type 'text'.
+     * @param value - The value of the text.
+     * @param name - The name of the text.
+     * @param placeholder - The placeholder text for the text.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the img element.
+     * @param minlength - The minimum length of the input.
+     * @param maxlength - The maximum length of the input.
+     * @param autocomplete - The autocomplete attribute of the input.
+     * @param size - The size (width in characters) of the input.
+     * @param pattern - The regex pattern to match against the input.
+     * @param list - The list ID to associate with the input.
+     * @param readonly - Whether the input is read-only.
+     * @param required - Whether the input is required.
+     * @param disabled - Whether the input is disabled.
+     * @returns {*} - The created input element.
+     */
+    createInputText(value = ``, name = ``, placeholder = ``,
+                    classList = ``, id = ``,
+                    minlength = 0, maxlength = 0,
+                    autocomplete = ``, size = 0, pattern = ``, list = ``,
+                    readonly = false, required = false, disabled = false) {
+        const input = this.#createElement(
+            document.createElement('input'), classList, id
+        )
+
+        input.type = `text`;
+
+        if (typeof value === `string` && value !== ``) {
+            input.value = value;
+        }
+
+        if (typeof name === `string` && name !== ``) {
+            input.name = name;
+        }
+
+        if (typeof placeholder === `string` && placeholder !== ``) {
+            input.placeholder = placeholder;
+        }
+
+        if (typeof minlength === `number` && Number.isInteger(minlength) && minlength >= 0) {
+            input.minLength = minlength;
+        }
+
+        if (typeof maxlength === `number` && Number.isInteger(maxlength) && maxlength > 0) {
+            input.maxLength = maxlength;
+        }
+
+        if (typeof autocomplete === `string` && autocomplete !== ``) {
+            input.autocomplete = autocomplete;
+        }
+
+        if (typeof size === `number` && Number.isInteger(size) && size > 0) {
+            input.size = size;
+        }
+
+        if (typeof pattern === `string` && pattern !== ``) {
+            input.pattern = pattern;
+        }
+
+        if (typeof list === `string` && list !== ``) {
+            input.list = list;
+        }
+
+        if (typeof readonly === `boolean`) {
+            input.readOnly = readonly;
+        }
+
+        if (typeof required === `boolean`) {
+            input.required = required;
+        }
+
+        if (typeof disabled === `boolean`) {
+            input.disabled = disabled;
+        }
+
+        return input;
+    }
+
+    /**
+     * @description Creates and returns a label element.
+     * @param text - The text to display in the label.
+     * @param labelFor - The ID of the element the label is associated with.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the label.
+     * @returns {*} - The created label element.
+     */
+    createLabel(text = ``, labelFor = ``, classList = ``, id = ``) {
+        const label = this.#createElement(
+            document.createElement('label'), classList, id
+        )
+
+        if (typeof text === `string` && text !== ``) {
+            label.innerText = text;
+        }
+
+        if (typeof labelFor === `string` && labelFor !== ``) {
+            label.htmlFor = labelFor;
+        }
+
+        return label;
     }
 
     /**
