@@ -29,7 +29,7 @@ class App {
 
         const name = this.nodeworthy.createDiv(`flex-row`);
         name.appendChild(
-            this.nodeworthy.createLabel(`Name:`, `input-name`, `text-right`)
+            this.nodeworthy.createLabel(`text-right`, ``, `Name:`, `input-name`)
         );
         name.appendChild(
             this.nodeworthy.createInputText(
@@ -43,7 +43,7 @@ class App {
 
         const age = this.nodeworthy.createDiv(`flex-row`);
         age.appendChild(
-            this.nodeworthy.createLabel(`Age:`, `input-age`, `text-right`)
+            this.nodeworthy.createLabel(`text-right`, ``, `Age:`, `input-age`)
         );
         age.appendChild(
             this.nodeworthy.createInputNumber(
@@ -56,7 +56,7 @@ class App {
 
         const countryCode = this.nodeworthy.createDiv(`flex-row`);
         countryCode.appendChild(
-            this.nodeworthy.createLabel(`CC:`, `input-cc`, `text-right`)
+            this.nodeworthy.createLabel(`text-right`, ``, `CC:`, `input-cc`)
         );
         countryCode.appendChild(
             this.nodeworthy.createInputText(
@@ -70,7 +70,7 @@ class App {
 
         const email = this.nodeworthy.createDiv(`flex-row`);
         email.appendChild(
-            this.nodeworthy.createLabel(`Email:`, `input-email`, `text-right`)
+            this.nodeworthy.createLabel(`text-right`, ``, `Email:`, `input-email`)
         );
         email.appendChild(
             this.nodeworthy.createInputEmail(
