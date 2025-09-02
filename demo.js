@@ -22,8 +22,8 @@ class App {
 
     #createForm() {
         const form = this.nodeworthy.createForm(
-            `dummy-form`, ``, ``,
-            `flex-column`, `dummy-form`, `_self`,
+            `flex-column`, `dummy-form`,
+            `dummy-form`, ``, ``, `_self`,
             `off`
         );
 
@@ -97,7 +97,7 @@ class App {
                     return;
                 }
 
-                if (typeof age.value === `string`) {
+                if (typeof age.value === `string` && age.value !== ``) {
                     ageValue = parseInt(age.value);
 
                     if (ageValue < 1) {
