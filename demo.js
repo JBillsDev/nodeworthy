@@ -14,7 +14,7 @@ class App {
     #createFooter() {
         const footer = this.nodeworthy.createFooter(`flex-center`);
         footer.append(
-            this.nodeworthy.createP(`©2025 - Some Company`)
+            this.nodeworthy.createP(``, ``, `©2025 - Some Company`)
         );
 
         document.body.appendChild(footer);

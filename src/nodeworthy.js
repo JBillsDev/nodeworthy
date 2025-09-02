@@ -544,7 +544,7 @@ export default class Nodeworthy {
      * @param id - The ID to assign to the paragraph.
      * @returns {*} - The created paragraph element.
      */
-    createP(text = ``, classList = ``, id = ``) {
+    createP(classList = ``, id = ``, text = ``) {
         const p = this.#createElement(
             document.createElement('p'), classList, id
         )
