@@ -209,7 +209,7 @@ class App {
 
                     const div = this.nodeworthy.createDiv(`flex-center flex-row`, `div-img`);
                     const img = this.nodeworthy.createImg(`https://picsum.photos/200`, `A Picsum Image`);
-                    const a = this.nodeworthy.createA(`https://picsum.photos/`);
+                    const a = this.nodeworthy.createA(``, ``, `https://picsum.photos/`);
 
                     a.appendChild(img);
                     div.appendChild(a);
@@ -230,13 +230,13 @@ class App {
     #createNav() {
         const nav = this.nodeworthy.createNav(`flex-row`);
         nav.appendChild(
-            this.nodeworthy.createA(`https://google.com`, `Google`)
+            this.nodeworthy.createA(``, ``, `https://google.com`, `Google`)
         );
         nav.appendChild(
-            this.nodeworthy.createA(`https://duckduckgo.com`, `DuckDuckGo`)
+            this.nodeworthy.createA(``, ``, `https://duckduckgo.com`, `DuckDuckGo`)
         );
         nav.appendChild(
-            this.nodeworthy.createA(`https://github.com`, `GitHub`)
+            this.nodeworthy.createA(``, ``, `https://github.com`, `GitHub`)
         );
 
         document.body.appendChild(nav);
