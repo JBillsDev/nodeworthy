@@ -67,6 +67,18 @@ export default class Nodeworthy {
     }
 
     /**
+     * @description Creates and returns a aside element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the aside.
+     * @returns {*} - The created aside element.
+     */
+    createAside(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('aside'), classList, id
+        );
+    }
+
+    /**
      * @description Creates and returns a button element.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the button.

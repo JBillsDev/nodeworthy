@@ -53,6 +53,21 @@ article {
     }
 }
 
+aside {
+    background: var(--color-grey-dark);
+    border: 1px solid var(--color-white);
+    border-radius: 12px;
+    gap: 8px;
+    padding: 16px;
+    text-align: center;
+    width: 200px;
+    z-index: 100;
+
+    position: fixed;
+    left: 0;
+    top: 38%;
+}
+
 button {
     background: var(--color-blue);
     border: none;
@@ -241,17 +256,6 @@ table {
 
     img {
         border-radius: 12px;
-    }
-}
-
-#div-lists {
-    border: 2px inset var(--color-white);
-    gap: 16px;
-    padding: 16px;
-    width: 100%;
-
-    div {
-        justify-content: space-between;
     }
 }
 
