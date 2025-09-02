@@ -189,13 +189,13 @@ export default class Nodeworthy {
 
     /**
      * @description Creates and returns an img element.
-     * @param src - The source of the image.
-     * @param alt - The alt text for the image.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the img element.
+     * @param src - The source of the image.
+     * @param alt - The alt text for the image.
      * @returns {*} - The created img element.
      */
-    createImg(src, alt = ``, classList = ``, id = ``) {
+    createImg(classList = ``, id = ``, src, alt = ``) {
         const img = this.#createElement(
             document.createElement('img'), classList, id
         )
