@@ -142,7 +142,7 @@ class App {
         const header = this.nodeworthy.createHeader();
         const div1 = this.nodeworthy.createDiv('background-dark border-bottom flex-row', `div-h1`);
         div1.appendChild(
-            this.nodeworthy.createH(`This is an H1...`)
+            this.nodeworthy.createH(``, ``, 1, `This is an H1...`)
         );
         header.appendChild(div1);
         document.body.appendChild(header);
@@ -150,7 +150,7 @@ class App {
         await this.#waitSeconds(0.5);
         const div2 = this.nodeworthy.createDiv('background-dark border-bottom flex-row');
         div2.appendChild(
-            this.nodeworthy.createH(`While this is an H6`, 6)
+            this.nodeworthy.createH(``, ``, 6, `While this is an H6`)
         );
 
         header.appendChild(div2);
@@ -159,7 +159,7 @@ class App {
     #createLists() {
         const div = this.nodeworthy.createDiv(`flex-column`, `div-lists`);
         div.appendChild(
-            this.nodeworthy.createH(`Lists`, 2, `border-bottom text-center`)
+            this.nodeworthy.createH(`border-bottom text-center`, ``, 2, `Lists`)
         );
 
         const flexRow = this.nodeworthy.createDiv(`flex-row`);
@@ -186,7 +186,7 @@ class App {
     async #createMain() {
         const main = this.nodeworthy.createMain(`flex-center flex-column`);
         main.appendChild(
-            this.nodeworthy.createH(`Title`, 2)
+            this.nodeworthy.createH(``, ``, 2, `Title`)
         );
 
         const p = this.nodeworthy.createP();
