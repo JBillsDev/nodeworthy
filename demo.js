@@ -7,6 +7,31 @@ class App {
         this.nodeworthy = new Nodeworthy();
     }
 
+    #createAside() {
+        const aside = this.nodeworthy.createAside(`flex-column`);
+        aside.appendChild(
+            this.nodeworthy.createH(`border-bottom text-center`, ``, 2, `Lists`)
+        );
+
+        const ol = this.nodeworthy.createOl();
+        for (let i = 0; i < 5; i++) {
+            ol.appendChild(
+                this.nodeworthy.createLi(``, ``, `Ordered list item`)
+            );
+        }
+
+        const ul = this.nodeworthy.createUl();
+        for (let i = 0; i < 5; i++) {
+            ul.appendChild(
+                this.nodeworthy.createLi(``, ``, `Unordered list item`)
+            );
+        }
+
+        aside.appendChild(ol);
+        aside.appendChild(ul);
+        document.body.appendChild(aside);
+    }
+
     #createFooter() {
         const footer = this.nodeworthy.createFooter(`flex-center`);
         footer.append(
@@ -155,33 +180,6 @@ class App {
         header.appendChild(div2);
     }
 
-    #createLists() {
-        const div = this.nodeworthy.createDiv(`flex-column`, `div-lists`);
-        div.appendChild(
-            this.nodeworthy.createH(`border-bottom text-center`, ``, 2, `Lists`)
-        );
-
-        const flexRow = this.nodeworthy.createDiv(`flex-row`);
-        const ol = this.nodeworthy.createOl();
-        for (let i = 0; i < 5; i++) {
-            ol.appendChild(
-                this.nodeworthy.createLi(``, ``, `Ordered list item`)
-            );
-        }
-
-        const ul = this.nodeworthy.createUl();
-        for (let i = 0; i < 5; i++) {
-            ul.appendChild(
-                this.nodeworthy.createLi(``, ``, `Unordered list item`)
-            );
-        }
-
-        flexRow.appendChild(ol);
-        flexRow.appendChild(ul);
-        div.appendChild(flexRow);
-        document.querySelector(`main`).appendChild(div);
-    }
-
     async #createMain() {
         const main = this.nodeworthy.createMain(`flex-center flex-column`);
         main.appendChild(
@@ -221,8 +219,6 @@ class App {
             )
         );
 
-        this.#waitSeconds(0.5).then();
-        this.#createLists();
         this.#waitSeconds(0.5).then();
         this.#createTableHead();
         await this.#createTableBody();
@@ -360,6 +356,7 @@ class App {
         this.#createFooter();
         await this.#createHeader();
         await this.#waitSeconds(0.5);
+        this.#createAside();
         this.#createNav();
         await this.#waitSeconds(0.5);
         await this.#createMain();
