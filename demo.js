@@ -33,7 +33,8 @@ class App {
         );
         name.appendChild(
             this.nodeworthy.createInputText(
-                ``, `input-name`, `John Doe`, ``, `input-name`,
+                ``, `input-name`,
+                ``, `input-name`, `John Doe`,
                 0, 0, ``, 0, ``,
                 ``, false, true
             )
@@ -46,7 +47,7 @@ class App {
         );
         age.appendChild(
             this.nodeworthy.createInputNumber(
-                0, 1, `input-age`, 21, ``,  `input-age`,
+                ``,  `input-age`, 0, 1, `input-age`, 21,
                 0, 0, ``, 0, `/^[0-9]+$/`,
                 ``, false, true
             )
@@ -59,7 +60,8 @@ class App {
         );
         countryCode.appendChild(
             this.nodeworthy.createInputText(
-                ``, `input-cc`, `US`, ``, `input-cc`,
+                ``, `input-cc`,
+                ``, `input-cc`, `US`,
                 2, 2, ``, 0, `/^[A-Za-z]+$/`,
                 ``, false, true
             )
@@ -72,7 +74,8 @@ class App {
         );
         email.appendChild(
             this.nodeworthy.createInputEmail(
-                ``, `input-email`, `john@fakemail.com`, ``, `input-email`,
+                ``, `input-email`,
+                ``, `input-email`, `john@fakemail.com`,
                 0, 0, false, ``, 0, ``,
                 ``, false, true
             )

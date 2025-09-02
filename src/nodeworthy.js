@@ -212,11 +212,11 @@ export default class Nodeworthy {
 
     /**
      * @description Creates and returns an input element of type 'email'.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the img element.
      * @param value - The value of the email.
      * @param name - The name of the email.
      * @param placeholder - The placeholder text for the email.
-     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
-     * @param id - The ID to assign to the img element.
      * @param minlength - The minimum length of the input.
      * @param maxlength - The maximum length of the input.
      * @param multiple - Whether the input allows multiple email values.
@@ -229,11 +229,11 @@ export default class Nodeworthy {
      * @param disabled - Whether the input is disabled.
      * @returns {*} - The created input element.
      */
-    createInputEmail(value = ``, name = ``, placeholder = ``,
-                    classList = ``, id = ``,
-                    minlength = 0, maxlength = 0, multiple = false,
-                    autocomplete = ``, size = 0, pattern = ``, list = ``,
-                    readonly = false, required = false, disabled = false) {
+    createInputEmail(classList = ``, id = ``,
+                     value = ``, name = ``, placeholder = ``,
+                     minlength = 0, maxlength = 0, multiple = false,
+                     autocomplete = ``, size = 0, pattern = ``, list = ``,
+                     readonly = false, required = false, disabled = false) {
         const input = this.#createElement(
             document.createElement('input'), classList, id
         )
@@ -297,12 +297,12 @@ export default class Nodeworthy {
 
     /**
      * @description Creates and returns an input element of type 'number'.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the img element.
      * @param value - The value of the number.
      * @param step - The step value of the number.
      * @param name - The name of the number.
      * @param placeholder - The placeholder text for the number.
-     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
-     * @param id - The ID to assign to the img element.
      * @param min - The minimum length of the input.
      * @param max - The maximum length of the input.
      * @param autocomplete - The autocomplete attribute of the input.
@@ -314,11 +314,11 @@ export default class Nodeworthy {
      * @param disabled - Whether the input is disabled.
      * @returns {*} - The created input element.
      */
-    createInputNumber(value = 0, step = 1, name = ``, placeholder = 0,
-                    classList = ``, id = ``,
-                    min = 0, max = 0,
-                    autocomplete = ``, size = 0, pattern = ``, list = ``,
-                    readonly = false, required = false, disabled = false) {
+    createInputNumber(classList = ``, id = ``,
+                      value = 0, step = 1, name = ``, placeholder = 0,
+                      min = 0, max = 0,
+                      autocomplete = ``, size = 0, pattern = ``, list = ``,
+                      readonly = false, required = false, disabled = false) {
         const input = this.#createElement(
             document.createElement('input'), classList, id
         )
@@ -382,11 +382,11 @@ export default class Nodeworthy {
 
     /**
      * @description Creates and returns an input element of type 'text'.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the img element.
      * @param value - The value of the text.
      * @param name - The name of the text.
      * @param placeholder - The placeholder text for the text.
-     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
-     * @param id - The ID to assign to the img element.
      * @param minlength - The minimum length of the input.
      * @param maxlength - The maximum length of the input.
      * @param autocomplete - The autocomplete attribute of the input.
@@ -398,8 +398,8 @@ export default class Nodeworthy {
      * @param disabled - Whether the input is disabled.
      * @returns {*} - The created input element.
      */
-    createInputText(value = ``, name = ``, placeholder = ``,
-                    classList = ``, id = ``,
+    createInputText(classList = ``, id = ``,
+                    value = ``, name = ``, placeholder = ``,
                     minlength = 0, maxlength = 0,
                     autocomplete = ``, size = 0, pattern = ``, list = ``,
                     readonly = false, required = false, disabled = false) {
