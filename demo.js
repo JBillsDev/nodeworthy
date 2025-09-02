@@ -212,7 +212,7 @@ class App {
                     main.removeChild(document.getElementById(buttonID));
 
                     const div = this.nodeworthy.createDiv(`flex-center flex-row`, `div-img`);
-                    const img = this.nodeworthy.createImg(`https://picsum.photos/200`, `A Picsum Image`);
+                    const img = this.nodeworthy.createImg(``, ``, `https://picsum.photos/200`, `A Picsum Image`);
                     const a = this.nodeworthy.createA(``, ``, `https://picsum.photos/`);
 
                     a.appendChild(img);
