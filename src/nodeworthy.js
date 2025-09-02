@@ -9,9 +9,9 @@ export default class Nodeworthy {
 
     /**
      * @description Applies the specified class list and ID to the given element.
-     * @param element - The element to apply the class list and ID to.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the element.
+     * @param element - The element to apply the class list and ID to.
      * @returns {*} - The modified element.
      */
     #createElement(element, classList, id) {
@@ -34,10 +34,10 @@ export default class Nodeworthy {
 
     /**
      * @description Creates and returns an anchor element.
-     * @param href - The URL to link to.
-     * @param text - The text to display on the link.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the link.
+     * @param href - The URL to link to.
+     * @param text - The text to display on the link.
      * @returns {*} - The created anchor element.
      */
     createA(classList = ``, id = ``, href = ``, text = ``) {
@@ -56,10 +56,10 @@ export default class Nodeworthy {
 
     /**
      * @description Creates and returns a button element.
-     * @param text - The text to display on the button.
-     * @param callback - The function to call when the button is clicked.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the button.
+     * @param text - The text to display on the button.
+     * @param callback - The function to call when the button is clicked.
      * @returns {*} - The created button element.
      */
     createButton(classList = ``, id = ``, text = ``, callback = () => {}) {
@@ -98,11 +98,11 @@ export default class Nodeworthy {
 
     /**
      * description Creates and returns a form element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the form.
      * @param name - The name of the form.
      * @param action - The action URL of the form.
      * @param method - The HTTP method of the form.
-     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
-     * @param id - The ID to assign to the form.
      * @param target - The target attribute of the form.
      * @param autocomplete - The autocomplete attribute of the form.
      * @param acceptCharset - The acceptCharset attribute of the form.
@@ -156,13 +156,13 @@ export default class Nodeworthy {
 
     /**
      * @description Creates and returns an 'h' element of the specified level (h1 - h6).
-     * @param text - The text to display in the 'h' element.
-     * @param level - The level of the 'h' element (1-6).
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the 'h' element.
+     * @param level - The level of the 'h' element (1-6).
+     * @param text - The text to display in the 'h' element.
      * @returns {*} - The created 'h' element.
      */
-    createH(text = ``, level = 1, classList = ``, id = ``) {
+    createH(classList = ``, id = ``, level = 1, text = ``) {
         if (typeof level !== `number` || !Number.isInteger(level) || level < 1 || level > 6) {
             level = 1;
         }
