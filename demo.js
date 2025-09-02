@@ -277,21 +277,21 @@ class App {
         const thead = this.nodeworthy.createThead();
         const headRowTop = this.nodeworthy.createTr();
         headRowTop.appendChild(
-            this.nodeworthy.createTh(`#`, 0, 2, `table-index text-center`)
+            this.nodeworthy.createTh(`table-index text-center`, ``,`#`, 0, 2)
         );
         headRowTop.appendChild(
-            this.nodeworthy.createTh(`Name`, `text-center`)
+            this.nodeworthy.createTh(`text-center`, ``, `Name`)
         );
         headRowTop.appendChild(
-            this.nodeworthy.createTh(`Age`, 0, 0, `table-age text-center`)
+            this.nodeworthy.createTh(`table-age text-center`, ``, `Age`, 0, 0)
         );
         headRowTop.appendChild(
-            this.nodeworthy.createTh(`CC`, 0, 0, `table-cc text-center`)
+            this.nodeworthy.createTh(`table-cc text-center`, ``, `CC`, 0, 0)
         );
 
         const headRowBottom = this.nodeworthy.createTr();
         headRowBottom.appendChild(
-            this.nodeworthy.createTh(`Email`, 3)
+            this.nodeworthy.createTh(``, ``, `Email`, 3)
         );
 
         thead.appendChild(headRowTop);
@@ -307,21 +307,21 @@ class App {
 
         const trTop = this.nodeworthy.createTr();
         trTop.appendChild(
-            this.nodeworthy.createTd(index.toString(), 0, 2, `table-index text-center`)
+            this.nodeworthy.createTd(`table-index text-center`, ``, index.toString(), 0, 2)
         );
         trTop.appendChild(
-            this.nodeworthy.createTd(row[`name`], 0, 0, `text-center`)
+            this.nodeworthy.createTd(`text-center`, ``, row[`name`], 0, 0)
         );
         trTop.appendChild(
-            this.nodeworthy.createTd(row[`age`], 0, 0, `table-age text-center`)
+            this.nodeworthy.createTd(`table-age text-center`, ``, row[`age`], 0, 0)
         );
         trTop.appendChild(
-            this.nodeworthy.createTd(row[`country`], 0, 0, `table-cc text-center`)
+            this.nodeworthy.createTd(`table-cc text-center`, ``, row[`country`], 0, 0)
         );
 
         const trBottom = this.nodeworthy.createTr();
         trBottom.appendChild(
-            this.nodeworthy.createTd(row[`email`], 3, 0, `text-center`)
+            this.nodeworthy.createTd(`text-center`, ``, row[`email`], 3, 0)
         );
 
         const tbody = document.querySelector(`tbody`);
