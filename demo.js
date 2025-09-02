@@ -169,14 +169,14 @@ class App {
         const ol = this.nodeworthy.createOl();
         for (let i = 0; i < 5; i++) {
             ol.appendChild(
-                this.nodeworthy.createLi(`Ordered list item`)
+                this.nodeworthy.createLi(``, ``, `Ordered list item`)
             );
         }
 
         const ul = this.nodeworthy.createUl();
         for (let i = 0; i < 5; i++) {
             ul.appendChild(
-                this.nodeworthy.createLi(`Unordered list item`)
+                this.nodeworthy.createLi(``, ``, `Unordered list item`)
             );
         }
 
