@@ -55,6 +55,18 @@ export default class Nodeworthy {
     }
 
     /**
+     * @description Creates and returns an article element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the section.
+     * @returns {*} - The created article element.
+     */
+    createArticle(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('article'), classList, id
+        );
+    }
+
+    /**
      * @description Creates and returns a button element.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the button.

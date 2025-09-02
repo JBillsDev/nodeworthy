@@ -7,8 +7,26 @@ class App {
         this.nodeworthy = new Nodeworthy();
     }
 
-    #waitSeconds(seconds) {
-        return new Promise(resolve => setTimeout(resolve, seconds * 1000));
+    #createArticles() {
+        const main = document.querySelector(`main`);
+
+        const article1 = this.nodeworthy.createArticle();
+        article1.appendChild(
+            this.nodeworthy.createH(`text-center`, ``, 2, `Article 1`)
+        );
+        article1.appendChild(
+            this.nodeworthy.createP(``, ``, `This is a paragraph in an article.`)
+        );
+        main.appendChild(article1);
+
+        const article2 = this.nodeworthy.createArticle();
+        article2.appendChild(
+            this.nodeworthy.createH(`text-center`, ``, 2, `Article 1`)
+        );
+        article2.appendChild(
+            this.nodeworthy.createP(``, ``, `This is a paragraph in an article.`)
+        );
+        main.appendChild(article2);
     }
 
     #createFooter() {
@@ -329,6 +347,10 @@ class App {
         tbody.appendChild(trBottom);
     }
 
+    #waitSeconds(seconds) {
+        return new Promise(resolve => setTimeout(resolve, seconds * 1000));
+    }
+
     async login() {
         document.body.removeChild(document.getElementById(`login`));
 
@@ -339,6 +361,8 @@ class App {
         this.#createNav();
         await this.#waitSeconds(0.5);
         await this.#createMain();
+        await this.#waitSeconds(0.5);
+        this.#createArticles();
     }
 }
 
