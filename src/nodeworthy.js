@@ -462,13 +462,13 @@ export default class Nodeworthy {
 
     /**
      * @description Creates and returns a label element.
-     * @param text - The text to display in the label.
-     * @param labelFor - The ID of the element the label is associated with.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the label.
+     * @param text - The text to display in the label.
+     * @param labelFor - The ID of the element the label is associated with.
      * @returns {*} - The created label element.
      */
-    createLabel(text = ``, labelFor = ``, classList = ``, id = ``) {
+    createLabel(classList = ``, id = ``, text = ``, labelFor = ``) {
         const label = this.#createElement(
             document.createElement('label'), classList, id
         )
