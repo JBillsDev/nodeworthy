@@ -588,14 +588,14 @@ export default class Nodeworthy {
 
     /**
      * @description Creates and returns a td element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the td element.
      * @param innerHtml - The inner HTML content of the td element.
      * @param colspan - The number of columns to span.
      * @param rowspan - The number of rows to span.
-     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
-     * @param id - The ID to assign to the td element.
      * @returns {*} - The created td element.
      */
-    createTd(innerHtml = ``, colspan = 0, rowspan = 0, classList = ``, id = ``) {
+    createTd(classList = ``, id = ``, innerHtml = ``, colspan = 0, rowspan = 0) {
         const td = document.createElement('td');
 
         if (typeof colspan === `number` && Number.isInteger(colspan) && colspan > 0) {
@@ -613,14 +613,14 @@ export default class Nodeworthy {
 
     /**
      * @description Creates and returns a th element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the th element.
      * @param innerHtml - The inner HTML content of the th element.
      * @param colspan - The number of columns to span.
      * @param rowspan - The number of rows to span.
-     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
-     * @param id - The ID to assign to the th element.
      * @returns {*} - The created th element.
      */
-    createTh(innerHtml = ``, colspan = 0, rowspan = 0, classList = ``, id = ``) {
+    createTh(classList = ``, id = ``, innerHtml = ``, colspan = 0, rowspan = 0) {
         const th = document.createElement('th');
 
         if (typeof colspan === `number` && Number.isInteger(colspan) && colspan > 0) {
