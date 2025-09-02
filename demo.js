@@ -80,6 +80,8 @@ class App {
         form.appendChild(email);
 
         const button = this.nodeworthy.createButton(
+            ``,
+            ``,
             `Submit`,
             (e) => {
                 e.preventDefault();
@@ -199,13 +201,15 @@ class App {
 
         this.#waitSeconds(0.5).then();
 
-        const buttonClass = `button-img`;
+        const buttonID = `button-img`;
         main.appendChild(
             this.nodeworthy.createButton(
+                ``,
+                buttonID,
                 `Click me!`,
                 () => {
                     const main = document.querySelector(`main`);
-                    main.removeChild(document.getElementById(buttonClass));
+                    main.removeChild(document.getElementById(buttonID));
 
                     const div = this.nodeworthy.createDiv(`flex-center flex-row`, `div-img`);
                     const img = this.nodeworthy.createImg(`https://picsum.photos/200`, `A Picsum Image`);
@@ -214,9 +218,7 @@ class App {
                     a.appendChild(img);
                     div.appendChild(a);
                     main.appendChild(div);
-                },
-                ``,
-                buttonClass
+                }
             )
         );
 
@@ -345,12 +347,12 @@ window.onload = () => {
         `flex-column`, `login`
     );
     const button = nodeworthy.createButton(
+        ``,
+        `button-login`,
         `Login`,
         () => {
             app.login().then();
-        },
-        ``,
-        `button-login`
+        }
     );
 
     div.appendChild(button);

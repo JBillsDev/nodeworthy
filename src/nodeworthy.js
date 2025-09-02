@@ -62,7 +62,7 @@ export default class Nodeworthy {
      * @param id - The ID to assign to the button.
      * @returns {*} - The created button element.
      */
-    createButton(text = ``, callback = () => {}, classList = ``, id = ``) {
+    createButton(classList = ``, id = ``, text = ``, callback = () => {}) {
         const button = this.#createElement(
             document.createElement('button'), classList, id
         )
