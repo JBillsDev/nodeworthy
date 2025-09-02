@@ -486,16 +486,19 @@ export default class Nodeworthy {
 
     /**
      * description Creates and returns an 'li' element.
-     * @param innerHtml - The inner HTML content of the 'li' element.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the 'li' element.
+     * @param innerHtml - The inner HTML content of the 'li' element.
      * @returns {*} - The created main element.
      */
-    createLi(innerHtml = ``, classList = ``, id = ``) {
-        const li = document.createElement('li');
+    createLi(classList = ``, id = ``, innerHtml = ``) {
+        const li = this.#createElement(
+            document.createElement('li'), classList, id
+        );
+
         li.innerHTML = innerHtml;
 
-        return this.#createElement(li, classList, id);
+        return li;
     }
 
     /**
