@@ -110,8 +110,8 @@ export default class Nodeworthy {
      * @param enctype - The enctype attribute of the form.
      * @returns {*} - The created form element.
      */
-    createForm(name = ``, action = ``, method = ``,
-               classList = ``, id = ``, target = `_self`,
+    createForm(classList = ``, id = ``,
+               name = ``, action = ``, method = ``, target = `_self`,
                autocomplete = `off`, acceptCharset = `UTF-8`, novalidate = false,
                enctype = `application/x-www-form-urlencoded`) {
         const form = document.createElement('form');
