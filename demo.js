@@ -194,7 +194,7 @@ class App {
 
         const p = this.nodeworthy.createP();
         p.innerHTML = `This is a paragraph with a`;
-        const span = this.nodeworthy.createSpan(` span that highlights text!`, `text-highlight`);
+        const span = this.nodeworthy.createSpan(`text-highlight`, ``, ` span that highlights text!`);
         p.appendChild(span);
         main.appendChild(p);
 
