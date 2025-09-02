@@ -565,6 +565,25 @@ export default class Nodeworthy {
         return p;
     }
 
+    /**
+     * @description Creates and returns a section element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the paragraph.
+     * @returns {*} - The created section element.
+     */
+    createSection(classList = ``, id = ``) {
+        return this.#createElement(
+            document.createElement('section'), classList, id
+        );
+    }
+
+    /**
+     * @description Creates and returns a span element.
+     * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
+     * @param id - The ID to assign to the paragraph.
+     * @param innerHtml - The inner HTML content of the span element.
+     * @returns {*} - The created section element.
+     */
     createSpan(classList = ``, id = ``, innerHtml = ``) {
         const span = this.#createElement(
             document.createElement('span'), classList, id

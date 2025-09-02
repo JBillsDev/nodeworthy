@@ -7,28 +7,6 @@ class App {
         this.nodeworthy = new Nodeworthy();
     }
 
-    #createArticles() {
-        const main = document.querySelector(`main`);
-
-        const article1 = this.nodeworthy.createArticle();
-        article1.appendChild(
-            this.nodeworthy.createH(`text-center`, ``, 2, `Article 1`)
-        );
-        article1.appendChild(
-            this.nodeworthy.createP(``, ``, `This is a paragraph in an article.`)
-        );
-        main.appendChild(article1);
-
-        const article2 = this.nodeworthy.createArticle();
-        article2.appendChild(
-            this.nodeworthy.createH(`text-center`, ``, 2, `Article 1`)
-        );
-        article2.appendChild(
-            this.nodeworthy.createP(``, ``, `This is a paragraph in an article.`)
-        );
-        main.appendChild(article2);
-    }
-
     #createFooter() {
         const footer = this.nodeworthy.createFooter(`flex-center`);
         footer.append(
@@ -265,6 +243,30 @@ class App {
         document.body.appendChild(nav);
     }
 
+    #createSection() {
+        const section = this.nodeworthy.createSection(`flex-center flex-column`);
+
+        const article1 = this.nodeworthy.createArticle();
+        article1.appendChild(
+            this.nodeworthy.createH(`text-center`, ``, 2, `Article 1`)
+        );
+        article1.appendChild(
+            this.nodeworthy.createP(``, ``, `This is a paragraph in an article.`)
+        );
+        section.appendChild(article1);
+
+        const article2 = this.nodeworthy.createArticle();
+        article2.appendChild(
+            this.nodeworthy.createH(`text-center`, ``, 2, `Article 1`)
+        );
+        article2.appendChild(
+            this.nodeworthy.createP(``, ``, `This is a paragraph in an article.`)
+        );
+        section.appendChild(article2);
+
+        document.querySelector(`main`).appendChild(section);
+    }
+
     async #createTableBody() {
         const data = [
             { name: `John Johnnies`, age: 25, country: `US`, email: `john@fakemail.com` },
@@ -362,7 +364,7 @@ class App {
         await this.#waitSeconds(0.5);
         await this.#createMain();
         await this.#waitSeconds(0.5);
-        this.#createArticles();
+        this.#createSection();
     }
 }
 
