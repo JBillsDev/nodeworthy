@@ -40,17 +40,18 @@ export default class Nodeworthy {
      * @param id - The ID to assign to the link.
      * @returns {*} - The created anchor element.
      */
-    createA(href = ``, text = ``, classList = ``, id = ``) {
-        const a = document.createElement('a');
+    createA(classList = ``, id = ``, href = ``, text = ``) {
+        const a = this.#createElement(
+            document.createElement('a'), classList, id
+        );
+
         if (typeof href === `string` && href !== ``) {
             a.href = href;
         }
 
         a.textContent = text;
 
-        return this.#createElement(
-            a, classList, id
-        );
+        return a;
     }
 
     /**
