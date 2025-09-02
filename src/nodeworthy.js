@@ -539,9 +539,9 @@ export default class Nodeworthy {
 
     /**
      * @description Creates and returns a paragraph element.
-     * @param text - The text to display in the paragraph.
      * @param classList - A space-separated string of class names to apply to the element, (e.g. 'class1 class2').
      * @param id - The ID to assign to the paragraph.
+     * @param text - The text to display in the paragraph.
      * @returns {*} - The created paragraph element.
      */
     createP(classList = ``, id = ``, text = ``) {
@@ -553,7 +553,7 @@ export default class Nodeworthy {
         return p;
     }
 
-    createSpan(innerHtml = ``, classList = ``, id = ``) {
+    createSpan(classList = ``, id = ``, innerHtml = ``) {
         const span = this.#createElement(
             document.createElement('span'), classList, id
         )
